@@ -21,9 +21,15 @@ public class MethodReferenceDemo {
                   System.out.println(employee);
               });
 
-      //method reference
+      //method reference with custom type
       service.loadEmployees()
               .forEach(MethodReferenceDemo::print);
+
+      //method reference with predefined class
+      service.loadEmployees()
+              .forEach(System.out::println);
+
+
     }
 
     private static void print(Employee employee) {
